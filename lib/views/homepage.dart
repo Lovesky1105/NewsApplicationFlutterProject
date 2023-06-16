@@ -13,6 +13,7 @@ import 'package:newsapplication/views/shownewspage.dart';
 
 import 'admin_page.dart';
 import 'drawer.dart';
+import 'nba_api.dart';
 import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -106,6 +107,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void goToNbaApiPage() {
+    Navigator.pop(context);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NbaApi(),
+      ),
+    );
+  }
+
   void signOut() {
     FirebaseAuth.instance.signOut();
   }
@@ -155,6 +167,7 @@ class _HomePageState extends State<HomePage> {
         onHomePageTap: goToHomePage,
         onProfileTap: goToProfilePage,
         onAdminTap: goToAdminPage,
+        onNbaTap: goToNbaApiPage,
         onGetNewsTap: goGetNews,
         onPostNewsTap: goPostNewsPage,
         onEditDeleteTap: goEditDeletePage,

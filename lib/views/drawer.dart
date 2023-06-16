@@ -10,6 +10,7 @@ class MyDrawer extends StatelessWidget {
   final void Function()? onPostNewsTap;
   final void Function()? onEditDeleteTap;
   final void Function()? onHomePageTap;
+  final void Function()? onNbaTap;
 
   const MyDrawer({
     Key? key,
@@ -19,6 +20,7 @@ class MyDrawer extends StatelessWidget {
     required this.onPostNewsTap,
     required this.onEditDeleteTap,
     required this.onHomePageTap,
+    required this.onNbaTap,
   }) : super(key: key);
 
   @override
@@ -56,6 +58,12 @@ class MyDrawer extends StatelessWidget {
               icon: Icons.admin_panel_settings_rounded,
               text: 'A D M I N',
               onTap: onAdminTap,
+            ),
+
+            MyListTile(
+              icon: Icons.sports,
+              text: 'N B A ',
+              onTap: onNbaTap,
             ),
 
             MyListTile(

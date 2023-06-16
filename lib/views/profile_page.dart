@@ -10,6 +10,7 @@ import 'drawer.dart';
 import 'edit_delete_newspage.dart';
 import 'homepage.dart';
 import 'login_page.dart';
+import 'nba_api.dart';
 import 'shownewspage.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -103,6 +104,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  void goToNbaApiPage() {
+    Navigator.pop(context);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NbaApi(),
+      ),
+    );
+  }
+
   Future<void> editField(String field) async {
     String newValue = "";
     await showDialog(
@@ -164,6 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         onHomePageTap: goToHomePage,
         onProfileTap: goToProfilePage,
         onAdminTap: goToAdminPage,
+        onNbaTap: goToNbaApiPage,
         onGetNewsTap: goGetNews,
         onPostNewsTap: goPostNewsPage,
         onEditDeleteTap: goEditDeletePage,
