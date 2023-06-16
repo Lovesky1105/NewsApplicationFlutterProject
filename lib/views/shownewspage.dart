@@ -7,6 +7,7 @@ import 'admin_page.dart';
 import 'drawer.dart';
 import 'edit_delete_newspage.dart';
 import 'homepage.dart';
+import 'nba_api.dart';
 import 'postnewspage.dart';
 import 'profile_page.dart';
 
@@ -33,6 +34,17 @@ class _GetNewsState extends State<GetNews> {
           print("Ntg to see here");
         }
       }),
+    );
+  }
+
+  void goToNbaApiPage() {
+    Navigator.pop(context);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NbaApi(),
+      ),
     );
   }
 
@@ -148,6 +160,7 @@ class _GetNewsState extends State<GetNews> {
         onHomePageTap: goToHomePage,
         onProfileTap: goToProfilePage,
         onAdminTap: goToAdminPage,
+        onNbaTap: goToNbaApiPage,
         onGetNewsTap: goGetNews,
         onPostNewsTap: goPostNewsPage,
         onEditDeleteTap: goEditDeletePage,
