@@ -5,6 +5,8 @@ import 'package:newsapplication/components/text_field.dart';
 import 'package:newsapplication/components/button.dart';
 import 'package:newsapplication/views/login_page.dart';
 
+import 'homepage.dart';
+
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
 
@@ -35,6 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        //input email and password
         email: emailTextController.text,
         password: passwordTextController.text,
       );
@@ -51,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
       // Navigate to the login page after successful registration
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => LoginPage(onTap: () => loginCallback(context))),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
